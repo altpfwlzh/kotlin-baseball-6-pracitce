@@ -2,12 +2,12 @@ package baseball.util
 
 import camp.nextstep.edu.missionutils.Randoms
 
-class RandNumsGenerator(private val startNum: Int, private val endNum: Int) {
+class RandNumsGenerator() {
 
-    fun generate(): MutableList<Int> {
+    fun generate(startNum: Int, endNum: Int, count: Int): List<Int> {
         val result: MutableList<Int> = mutableListOf()
 
-        while(result.size < 3){
+        while(result.size < count){
             val randomNumber = Randoms.pickNumberInRange(startNum, endNum)
             if (!result.contains(randomNumber)) {
                 result.add(randomNumber)
